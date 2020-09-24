@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            report result
+        </title>
+        <style>
+            section {
+                display: grid;
+                gap:20px;
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+        </style>
+    </head>        
+    <body>
+        <h1>
+            Searching results         
+        </h1>
+        <h3>
+            You've got results for {{searchingword}}. number of the result: {{searchingrResult}}
+        </h3>
+        <a href="/export?word={{searchingword}}">Export to CSV</a> 
+        <!-- 링크를 눌렀을때 /export 페이지로 가게 되어있음. 이제 superscrap.py에서 app.route('/export')만들어주면 됨. -->
+        <section>
+        
+            <h4>title</h4>
+            <h4>company</h4>
+            <h4>location</h4>
+            <h4>link</h4>
+            {% for job in jobs %}
+               <span>{{job.Title}}</span>
+               <span>{{job.Company}}</span>
+               <span>{{job.location}}</span>
+               <a href="{{job.link}}" target = "_blank">Apply</a>
+            {% endfor %}               
+        </section>
+        <!-- 위에 css 코드와 더불어 표를 만드는 방법이다. 매우 쉽고 직관적이다 -->
+        
+    </body>    
+</html>

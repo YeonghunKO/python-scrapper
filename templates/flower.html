@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Job search
+        </title>
+    </head>        
+    <body>
+        <h1>
+            Job Search
+        </h1>
+        <form action = "report" method="GET">
+            <input placeholder="what job do you want?" required name="word"/> 
+            <button>Search</button> 
+            <!-- 무슨뜻이냐? 정보를 입력하고 엔터를 눌렀을때 /report라는 페이지로 정보가 이동하고(superscrap.py에서 app.route('/report')를 만들거다) 이동하는 방법은 그 정보를 get하는 것이다.
+             그리고 required name ="word" 는 url 상에 '?word=데이터'(이걸 'query argument' 라고 한다) 라고 뜨게 된다. 
+             그럼 파이썬 프로그램에서 새로 생긴 url을 이용해 페이지를 유동적으로 관리할 수 있게 된다. 전반적으로는, 데이터를 다른페이지로 보내는 방법이다. -->
+        </form>
+    </body>    
+</html>
